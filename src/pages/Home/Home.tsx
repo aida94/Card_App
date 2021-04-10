@@ -5,6 +5,7 @@ import Add from "@material-ui/icons/Add";
 import Logo from "assets/image/casumo-logo.svg";
 import { useStyles } from "pages/Home/style";
 import CardList from "components/CardList/CardList";
+import CardModal from "components/Modal/Modal";
 
 const Home: React.FC = () => {
   const classes = useStyles();
@@ -27,6 +28,7 @@ const Home: React.FC = () => {
       >
         <Add />
       </IconButton>
+      <CardModal title="Add your card details" open={open} setOpen={setOpen} />
 
       <CardList />
     </div>

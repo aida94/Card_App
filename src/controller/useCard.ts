@@ -9,7 +9,12 @@ export const useCard = () => {
 
   useEffect(() => {
     if (storage) {
-      setCards(JSON.parse(storage));
+      const cards = JSON.parse(storage);
+      const sortedCards = cards.sort((a: CardInterface, b: CardInterface) =>
+        a.name.localeCompare(b.name)
+      );
+
+      setCards(sortedCards);
     }
   }, [storage]);
 

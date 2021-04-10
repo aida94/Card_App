@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Edit from "@material-ui/icons/Edit";
+import CardModal from "components/Modal/Modal";
 
 import { CardInterface } from "model/card";
 import { useStyles } from "components/Card/style";
@@ -44,6 +45,13 @@ const CardItem: React.FC<OwnProps> = ({ card }) => {
           </Typography>
         </Grid>
       </Grid>
+
+      <CardModal
+        title="Edit your card"
+        cardId={card.id}
+        open={open}
+        setOpen={setOpen}
+      />
     </Paper>
   );
 };

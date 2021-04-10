@@ -11,7 +11,7 @@ const CardHeader = () => {
     <Paper className={classes.paper}>
       <Grid container wrap="nowrap" spacing={2}>
         <Grid item xs={3}>
-          <Typography className={classes.header}>Name</Typography>
+          <Typography className={classes.header}>Name in card</Typography>
         </Grid>
         <Grid item xs={3}>
           <Typography className={classes.header}>Card Number</Typography>
