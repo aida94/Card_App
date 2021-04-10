@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# Casumo Frontend Developer Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Casumo allows players to register multiple payment methods to make deposits easier.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## The Task
 
-### `yarn start`
+Your task is to implement a small app that helps users to add bank cards as payment methods.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app should have three screens:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| Screen |                                                                      | Description                                                                                                        |
+| :----- | :------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------- |
+| 1      |    <img src="./resources/screens/your-cards.png" width="150px" />    | Show a list of the already registered bank cards.                                                                  |
+| 2      | <img src="./resources/screens/add-card-details.png" width="150px" /> | Show a form for registering a new credit card. This form should appear when clicking the “Add new card” button.    |
+| 3      |    <img src="./resources/screens/edit-card.png" width="150px" />     | Show a form for editing an existing credit card. This form should appear when clicking on an existing credit card. |
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Form validation
 
-### `yarn build`
+The form for registering a new bank card has to validate if the card details are correct before submitting the form, or return an error otherwise.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| State                                                                        | Description                                                                         |
+| :--------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| <img src="./resources/screens/add-card-details-success.png" width="150px" /> | **Success:** <br> Show the successful state for the inputs according to the design. |
+| <img src="./resources/screens/add-card-details-error.png" width="150px" />   | **Error:** <br> Show input validation errors according to the design.               |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## The tools
 
-### `yarn eject`
+Feel free to use whichever tools you like, although for the UI part we would prefer React.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Regarding persisting the data **we advise you not to build a backend service** for it but rather keep the data on the client.<br>
+Use whichever data-layer you are comfortable with.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Design tokens
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Here at Casumo we have a crack team of designers that speak their own language. We’re sharing some of that here with you in the hope that it can help you create pixel perfection.
 
-## Learn More
+### Spacings
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `4px`
+- `8px`
+- `16px`
+- `24px`
+- `32px`
+- `40px`
+- `48px`
+- `56px`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Fonts
+
+- [Circular Pro](./resources/lineto-circular-pro-book.woff2)
+
+### Fonts-size
+
+- `10px`
+- `14px`
+- `16px`
+- `24px`
+- `30px`
+
+### Border-radius
+
+- `16px`
+- `24px`
+- `100px`
+
+### Colours
+
+| HEX       | Preview                                                                     |
+| --------- | --------------------------------------------------------------------------- |
+| `#4C00C2` | ![purple-60](https://via.placeholder.com/150x50/4C00C2/000000.webp?text=+)  |
+| `#32007E` | ![purple-90](https://via.placeholder.com/150x50/32007E/000000.webp?text=+)  |
+| `#3B058E` | ![purple](https://via.placeholder.com/150x50/3B058E/000000.webp?text=+)     |
+| `#E5E5E5` | ![background](https://via.placeholder.com/150x50/E5E5E5/000000.webp?text=+) |
+| `#FFFFFF` | ![white](https://via.placeholder.com/150x50/FFFFFF/000000.webp?text=+)      |
+| `#D3D8E1` | ![grey-20](https://via.placeholder.com/150x50/D3D8E1/000000.webp?text=+)    |
+| `#798291` | ![grey-50](https://via.placeholder.com/150x50/798291/000000.webp?text=+)    |
+| `#444E5D` | ![grey-70](https://via.placeholder.com/150x50/444E5D/000000.webp?text=+)    |
+| `#1A212C` | ![grey-90](https://via.placeholder.com/150x50/1A212C/000000.webp?text=+)    |
+| `#19AC51` | ![green-30](https://via.placeholder.com/150x50/19AC51/000000.webp?text=+)   |
+| `#FC484C` | ![red-30](https://via.placeholder.com/150x50/FC484C/000000.webp?text=+)     |
+
+---
+
+## Notes
+
+- Consider the code you write to be production worthy
+- Make sure that you include the version-control history for the project when you are sharing it with us
+- We expect you to create your own solution rather than rely on 3rd party components.
+- You can find all the assets [here](./resources)
+- You can find all the app screens [here](./resources/screens)

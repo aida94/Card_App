@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, createContext } from "react";
 
-function App() {
+import "App.css";
+import { cardList } from "data/cardList";
+import { Constant } from "model/constant";
+import { useCard } from "controller/useCard";
+import Home from "pages/Home/Home";
+
+export const CardContext = createContext("" as any);
+
+const App: React.FC = () => {
+  const storage = localStorage.getItem(Constant.CARDS_STORAGE);
+  const { cards, setCards } = useCard();
+
+  useEffect(() => {
+    if (!storage) {
+      localStorage.setItem(Constant.CARDS_STORAGE, JSON.stringify(cardList));
+      setCards(cardList);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storage]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardContext.Provider value={{ cards, setCards }}>
+        <Home />
+      </CardContext.Provider>
     </div>
   );
-}
+};
 
 export default App;
